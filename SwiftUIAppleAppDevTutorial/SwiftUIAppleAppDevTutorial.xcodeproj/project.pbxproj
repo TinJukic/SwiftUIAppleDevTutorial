@@ -11,6 +11,10 @@
 		E31015EF2A83A1DD00D01073 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31015EE2A83A1DD00D01073 /* MeetingView.swift */; };
 		E31015F12A83A1DE00D01073 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E31015F02A83A1DE00D01073 /* Assets.xcassets */; };
 		E31015F42A83A1DE00D01073 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E31015F32A83A1DE00D01073 /* Preview Assets.xcassets */; };
+		E31015FC2A83ACCC00D01073 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31015FB2A83ACCC00D01073 /* Theme.swift */; };
+		E31015FE2A83AF6C00D01073 /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31015FD2A83AF6C00D01073 /* DailyScrum.swift */; };
+		E31016002A83B47200D01073 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31015FF2A83B47200D01073 /* CardView.swift */; };
+		E31016062A83BFF400D01073 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31016052A83BFF400D01073 /* TrailingIconLabelStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		E31015EE2A83A1DD00D01073 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 		E31015F02A83A1DE00D01073 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E31015F32A83A1DE00D01073 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E31015FB2A83ACCC00D01073 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E31015FD2A83AF6C00D01073 /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
+		E31015FF2A83B47200D01073 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E31016052A83BFF400D01073 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,9 @@
 		E31015EB2A83A1DD00D01073 /* SwiftUIAppleAppDevTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				E31016042A83BFD100D01073 /* Styles */,
+				E31016012A83B90C00D01073 /* Views */,
+				E31015FA2A83ACB300D01073 /* Models */,
 				E31015EC2A83A1DD00D01073 /* SwiftUIAppleAppDevTutorialApp.swift */,
 				E31015EE2A83A1DD00D01073 /* MeetingView.swift */,
 				E31015F02A83A1DE00D01073 /* Assets.xcassets */,
@@ -65,6 +76,31 @@
 				E31015F32A83A1DE00D01073 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E31015FA2A83ACB300D01073 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E31015FB2A83ACCC00D01073 /* Theme.swift */,
+				E31015FD2A83AF6C00D01073 /* DailyScrum.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E31016012A83B90C00D01073 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E31015FF2A83B47200D01073 /* CardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E31016042A83BFD100D01073 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				E31016052A83BFF400D01073 /* TrailingIconLabelStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E31015FE2A83AF6C00D01073 /* DailyScrum.swift in Sources */,
+				E31016062A83BFF400D01073 /* TrailingIconLabelStyle.swift in Sources */,
+				E31015FC2A83ACCC00D01073 /* Theme.swift in Sources */,
 				E31015EF2A83A1DD00D01073 /* MeetingView.swift in Sources */,
 				E31015ED2A83A1DD00D01073 /* SwiftUIAppleAppDevTutorialApp.swift in Sources */,
+				E31016002A83B47200D01073 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
