@@ -15,6 +15,7 @@
 		E31015FE2A83AF6C00D01073 /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31015FD2A83AF6C00D01073 /* DailyScrum.swift */; };
 		E31016002A83B47200D01073 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31015FF2A83B47200D01073 /* CardView.swift */; };
 		E31016062A83BFF400D01073 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31016052A83BFF400D01073 /* TrailingIconLabelStyle.swift */; };
+		E31016082A83C91700D01073 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31016072A83C91700D01073 /* ScrumsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E31015FD2A83AF6C00D01073 /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
 		E31015FF2A83B47200D01073 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E31016052A83BFF400D01073 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
+		E31016072A83C91700D01073 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				E31015FF2A83B47200D01073 /* CardView.swift */,
+				E31016072A83C91700D01073 /* ScrumsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				E31015FE2A83AF6C00D01073 /* DailyScrum.swift in Sources */,
 				E31016062A83BFF400D01073 /* TrailingIconLabelStyle.swift in Sources */,
 				E31015FC2A83ACCC00D01073 /* Theme.swift in Sources */,
+				E31016082A83C91700D01073 /* ScrumsView.swift in Sources */,
 				E31015EF2A83A1DD00D01073 /* MeetingView.swift in Sources */,
 				E31015ED2A83A1DD00D01073 /* SwiftUIAppleAppDevTutorialApp.swift in Sources */,
 				E31016002A83B47200D01073 /* CardView.swift in Sources */,
