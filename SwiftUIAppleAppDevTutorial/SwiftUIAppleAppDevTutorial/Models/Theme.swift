@@ -60,4 +60,10 @@ enum Theme: String {
 
         Color(rawValue)
     }
+
+    /// Capitalized color name
+    var name: String {
+
+        rawValue.capitalized
+    }
 }
