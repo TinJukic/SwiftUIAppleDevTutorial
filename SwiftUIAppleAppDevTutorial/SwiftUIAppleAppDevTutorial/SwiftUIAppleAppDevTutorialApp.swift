@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct SwiftUIAppleAppDevTutorialApp: App {
+
+    @State private var scrums: [DailyScrum] = DailyScrum.sampleData
+
     var body: some Scene {
+
         WindowGroup {
-            ScrumsView(scrums: DailyScrum.sampleData)
+            
+            ScrumsView(scrums: $scrums)  // passing a binding to scrums
         }
     }
 }

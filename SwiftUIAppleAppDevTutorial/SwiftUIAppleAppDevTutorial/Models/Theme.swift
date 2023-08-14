@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Color theme for the app.
-enum Theme: String {
+enum Theme: String, CaseIterable, Identifiable {
 
     case bubblegum
     case buttercup
@@ -61,9 +61,15 @@ enum Theme: String {
         Color(rawValue)
     }
 
-    /// Capitalized color name
+    /// Capitalized color name, unique for every color
     var name: String {
 
         rawValue.capitalized
+    }
+
+    /// ID of the selected color
+    var id: String {
+
+        name
     }
 }
