@@ -16,6 +16,8 @@
 		E31016002A83B47200D01073 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31015FF2A83B47200D01073 /* CardView.swift */; };
 		E31016062A83BFF400D01073 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31016052A83BFF400D01073 /* TrailingIconLabelStyle.swift */; };
 		E31016082A83C91700D01073 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31016072A83C91700D01073 /* ScrumsView.swift */; };
+		E33CC6602A8A0A92000639AF /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33CC65F2A8A0A92000639AF /* ThemeView.swift */; };
+		E33CC6622A8A0C25000639AF /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33CC6612A8A0C25000639AF /* ThemePicker.swift */; };
 		E3EE93932A86693B005F452E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE93922A86693B005F452E /* DetailView.swift */; };
 		E3EE93952A867CF5005F452E /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EE93942A867CF5005F452E /* DetailEditView.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +33,8 @@
 		E31015FF2A83B47200D01073 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		E31016052A83BFF400D01073 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 		E31016072A83C91700D01073 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
+		E33CC65F2A8A0A92000639AF /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		E33CC6612A8A0C25000639AF /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		E3EE93922A86693B005F452E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E3EE93942A867CF5005F452E /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +104,8 @@
 				E31016072A83C91700D01073 /* ScrumsView.swift */,
 				E3EE93922A86693B005F452E /* DetailView.swift */,
 				E3EE93942A867CF5005F452E /* DetailEditView.swift */,
+				E33CC65F2A8A0A92000639AF /* ThemeView.swift */,
+				E33CC6612A8A0C25000639AF /* ThemePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E33CC6622A8A0C25000639AF /* ThemePicker.swift in Sources */,
 				E31015FE2A83AF6C00D01073 /* DailyScrum.swift in Sources */,
 				E3EE93932A86693B005F452E /* DetailView.swift in Sources */,
 				E3EE93952A867CF5005F452E /* DetailEditView.swift in Sources */,
@@ -190,6 +197,7 @@
 				E31016082A83C91700D01073 /* ScrumsView.swift in Sources */,
 				E31015EF2A83A1DD00D01073 /* MeetingView.swift in Sources */,
 				E31015ED2A83A1DD00D01073 /* SwiftUIAppleAppDevTutorialApp.swift in Sources */,
+				E33CC6602A8A0A92000639AF /* ThemeView.swift in Sources */,
 				E31016002A83B47200D01073 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
