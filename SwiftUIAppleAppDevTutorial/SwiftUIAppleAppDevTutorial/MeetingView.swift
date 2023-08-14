@@ -6,51 +6,64 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct MeetingView: View {
 
+    @Binding var scrum: DailyScrum
+    @StateObject var scrumTimer: ScrumTimer = ScrumTimer()
+
+    private var player: AVPlayer {
+
+        .sharedDingPlayer
+    }
+
     var body: some View {
 
-        VStack {
+        ZStack {
 
-            ProgressView(value: 5, total: 15)
+            RoundedRectangle(cornerRadius: 16)
+                .fill(scrum.theme.mainColor)
 
-            HStack {
+            VStack {
 
-                VStack(alignment: .leading) {
-                    Text("Seconds Elapsed")
-                        .font(.caption)
-                    Label("300", systemImage: "hourglass.tophalf.fill")
-                }
+                MeetingHeaderView(
+                    secondsElapsed: scrumTimer.secondsElapsed,
+                    secondsRemainig: scrumTimer.secondsRemaining,
+                    theme: scrum.theme
+                )
 
-                Spacer()
+                Circle()
+                    .strokeBorder(lineWidth: 24)
 
-                VStack(alignment: .trailing) {
-                    Text("Seconds Remaining")
-                        .font(.caption)
-                    Label("600", systemImage: "hourglass.bottomhalf.fill")
-                }
-            }
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel("Time remaining")
-            .accessibilityValue("10 minutes")
-
-            Circle()
-                .strokeBorder(lineWidth: 24)
-
-            HStack {
-
-                Text("Speaker 1 of 3")
-
-                Spacer()
-
-                Button(action: {}) {
-                    Image(systemName: "forward.fill")
-                }
-                .accessibilityLabel("Next speaker")
+                MeetingFooterView(
+                    speakers: scrumTimer.speakers,
+                    skipAction: scrumTimer.skipSpeaker
+                )
             }
         }
         .padding()
+        .foregroundColor(scrum.theme.accentColor)
+        .onAppear {
+
+            scrumTimer.reset(
+                lengthInMinutes: scrum.lengthInMinutes,
+                attendees: scrum.attendees
+            )
+
+            scrumTimer.speakerChangedAction = {
+
+                player.seek(to: .zero)
+                player.play()
+            }
+
+            scrumTimer.startScrum()
+        }
+        .onDisappear {
+
+            scrumTimer.stopScrum()
+        }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -58,6 +71,6 @@ struct MeetingView_Previews: PreviewProvider {
 
     static var previews: some View {
 
-        MeetingView()
+        MeetingView(scrum: .constant(.emptyScrum))
     }
 }
