@@ -10,13 +10,35 @@ import SwiftUI
 @main
 struct SwiftUIAppleAppDevTutorialApp: App {
 
-    @State private var scrums: [DailyScrum] = DailyScrum.sampleData
+    @StateObject private var store: ScrumStore = .init()
 
     var body: some Scene {
 
         WindowGroup {
             
-            ScrumsView(scrums: $scrums)  // passing a binding to scrums
+            ScrumsView(scrums: $store.scrums) {  // passing a binding to scrums
+
+                Task {
+
+                    do {
+
+                        try await store.save(scrums: store.scrums)
+                    } catch {
+
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+            .task {
+
+                do {
+
+                    try await store.load()
+                } catch {
+
+                    fatalError(error.localizedDescription)
+                }
+            }
         }
     }
 }
