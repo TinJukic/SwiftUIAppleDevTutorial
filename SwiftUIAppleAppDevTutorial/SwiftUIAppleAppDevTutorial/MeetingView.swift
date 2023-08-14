@@ -46,24 +46,41 @@ struct MeetingView: View {
         .foregroundColor(scrum.theme.accentColor)
         .onAppear {
 
-            scrumTimer.reset(
-                lengthInMinutes: scrum.lengthInMinutes,
-                attendees: scrum.attendees
-            )
-
-            scrumTimer.speakerChangedAction = {
-
-                player.seek(to: .zero)
-                player.play()
-            }
-
-            scrumTimer.startScrum()
+            startScrum()
         }
         .onDisappear {
 
-            scrumTimer.stopScrum()
+            endScrum()
         }
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+// MARK: - Helper Methods
+
+extension MeetingView {
+
+    private func startScrum() {
+
+        scrumTimer.reset(
+            lengthInMinutes: scrum.lengthInMinutes,
+            attendees: scrum.attendees
+        )
+
+        scrumTimer.speakerChangedAction = {
+
+            player.seek(to: .zero)
+            player.play()
+        }
+
+        scrumTimer.startScrum()
+    }
+
+    private func endScrum() {
+
+        scrumTimer.stopScrum()
+
+        scrum.history.insert(History(attendees: scrum.attendees), at: 0)
     }
 }
 
