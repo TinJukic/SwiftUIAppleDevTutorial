@@ -11,7 +11,9 @@ import AVFoundation
 struct MeetingView: View {
 
     @Binding var scrum: DailyScrum
-    @StateObject var scrumTimer: ScrumTimer = ScrumTimer()
+    @StateObject var scrumTimer: ScrumTimer = .init()
+    @StateObject var speechRecognizer: SpeechRecognizer = .init()
+    @State private var isRecording: Bool = false
 
     private var player: AVPlayer {
 
@@ -33,7 +35,11 @@ struct MeetingView: View {
                     theme: scrum.theme
                 )
 
-                MeetingTimerView(speakers: scrumTimer.speakers, theme: scrum.theme)
+                MeetingTimerView(
+                    speakers: scrumTimer.speakers,
+                    isRecording: isRecording,
+                    theme: scrum.theme
+                )
 
                 MeetingFooterView(
                     speakers: scrumTimer.speakers,
@@ -72,6 +78,10 @@ extension MeetingView {
             player.play()
         }
 
+        speechRecognizer.resetTranscript()
+        speechRecognizer.startTranscribing()
+        isRecording = true
+
         scrumTimer.startScrum()
     }
 
@@ -79,7 +89,13 @@ extension MeetingView {
 
         scrumTimer.stopScrum()
 
-        scrum.history.insert(History(attendees: scrum.attendees), at: 0)
+        speechRecognizer.stopTranscribing()
+        isRecording = false
+
+        scrum.history.insert(
+            History(attendees: scrum.attendees, transcript: speechRecognizer.transcript),
+            at: 0
+        )
     }
 }
 
